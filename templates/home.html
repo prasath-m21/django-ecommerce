@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="jumbotron bg-light p-5 rounded">
+    <h1 class="display-4">Welcome to E-Commerce Store!</h1>
+    <p class="lead">Find amazing products at great prices.</p>
+    
+    {% if user.is_authenticated %}
+        <p>Hello, {{ user.get_short_name }}! Ready to shop?</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'products:product_list' %}" role="button">Browse Products</a>
+        <a class="btn btn-secondary btn-lg" href="{% url 'accounts:profile' %}" role="button">My Profile</a>
+    {% else %}
+        <p>Join us today and start shopping!</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'accounts:signup' %}" role="button">Sign Up</a>
+        <a class="btn btn-secondary btn-lg" href="{% url 'accounts:login' %}" role="button">Login</a>
+    {% endif %}
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">Wide Selection</h5>
+                <p class="card-text">Thousands of products to choose from.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">Best Prices</h5>
+                <p class="card-text">Competitive prices on all items.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">Fast Shipping</h5>
+                <p class="card-text">Quick delivery to your doorstep.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

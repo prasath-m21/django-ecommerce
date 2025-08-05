@@ -1,0 +1,75 @@
+/* Custom styles for our e-commerce site */
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Navbar customization */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Product cards (for later) */
+.product-card {
+    transition: transform 0.2s;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Footer stays at bottom */
+footer {
+    margin-top: auto;
+}
+
+/* Cart styles */
+.quantity-input {
+    text-align: center;
+}
+
+.quantity-minus, .quantity-plus {
+    width: 30px;
+    padding: 0.25rem;
+}
+
+/* Cart badge */
+.navbar .badge {
+    font-size: 0.75rem;
+    min-width: 20px;
+    height: 20px;
+    padding: 0.25rem 0.4rem;
+}
+
+/* Alert positioning */
+.alert.position-fixed {
+    max-width: 400px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Cart table */
+.table .btn-sm {
+    padding: 0.25rem 0.5rem;
+}
+
+/* Product image in cart */
+.table img {
+    border-radius: 0.25rem;
+}
+
