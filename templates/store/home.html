@@ -1,0 +1,129 @@
+<!-- store/templates/store/home.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3">Welcome to P Mart</h1>
+        <p class="lead mb-4">Discover amazing products at unbeatable prices</p>
+        
+        {% if search_query %}
+        <div class="alert alert-info d-inline-block">
+            Showing results for: <strong>"{{ search_query }}"</strong>
+            <a href="{% url 'store:home' %}" class="btn btn-sm btn-outline-light ms-2">Clear</a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Products Section -->
+<section class="py-5">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="row mb-4">
+            <div class="col">
+                <h2 class="h3">
+                    {% if search_query %}
+                        Search Results
+                    {% else %}
+                        All Products
+                    {% endif %}
+                </h2>
+                <p class="text-muted">Found {{ total_products }} product{{ total_products|pluralize }}</p>
+            </div>
+        </div>
+        
+        <!-- Products Grid -->
+        <div class="row g-4">
+            {% for product in products %}
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card product-card h-100 shadow-sm">
+                    <!-- Product Image -->
+                    <a href="{% url 'store:product_detail' product.slug %}">
+                        <img src="{{ product.get_image_url }}" 
+                             class="card-img-top product-image" 
+                             alt="{{ product.name }}">
+                    </a>
+                    
+                    <!-- Product Body -->
+                    <div class="card-body d-flex flex-column">
+                        <!-- Category Badge -->
+                        {% if product.category %}
+                        <div class="mb-2">
+                            <span class="badge bg-secondary category-badge">
+                                {{ product.category.name }}
+                            </span>
+                        </div>
+                        {% endif %}
+                        
+                        <!-- Product Title -->
+                        <h5 class="card-title">
+                            <a href="{% url 'store:product_detail' product.slug %}" 
+                               class="text-decoration-none text-dark">
+                                {{ product.name }}
+                            </a>
+                        </h5>
+                        
+                        <!-- Product Description -->
+                        <p class="card-text text-muted small flex-grow-1">
+                            {{ product.description|truncatewords:15 }}
+                        </p>
+                        
+                        <!-- Price and Stock -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="product-price">${{ product.price }}</span>
+                            
+                            {% if product.stock > 10 %}
+                                <span class="product-stock stock-available">
+                                    <i class="bi bi-check-circle"></i> In Stock
+                                </span>
+                            {% elif product.stock > 0 %}
+                                <span class="product-stock stock-low">
+                                    <i class="bi bi-exclamation-circle"></i> Low Stock
+                                </span>
+                            {% else %}
+                                <span class="product-stock stock-out">
+                                    <i class="bi bi-x-circle"></i> Out of Stock
+                                </span>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="d-grid gap-2">
+                            <a href="{% url 'store:product_detail' product.slug %}" 
+                               class="btn btn-outline-primary btn-sm">
+                                View Details
+                            </a>
+                            {% if product.is_in_stock %}
+                            <button class="btn btn-success btn-sm btn-add-to-cart">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12">
+                <div class="alert alert-info text-center">
+                    <i class="bi bi-info-circle fs-1 d-block mb-3"></i>
+                    <h4>No products found</h4>
+                    <p>
+                        {% if search_query %}
+                            Try adjusting your search terms or 
+                            <a href="{% url 'store:home' %}" class="alert-link">browse all products</a>.
+                        {% else %}
+                            Check back soon for new products!
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
