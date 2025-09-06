@@ -1,0 +1,22 @@
+databases:
+  - name: django-ecommerce-db
+    databaseName: django_ecommerce_db
+    user: django_user
+    plan: free
+
+services:
+  - type: web
+    name: django-ecommerce
+    runtime: python
+    plan: free
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn mystore.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: django-ecommerce-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.11.6

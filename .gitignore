@@ -6,19 +6,18 @@ __pycache__/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-media/
-staticfiles/
+/media
+/staticfiles
 
-# Environments
-.env
-.venv
-env/
+# Virtual Environment
 venv/
+env/
 ENV/
+.venv/
 
 # IDE
-.idea
 .vscode/
+.idea/
 *.swp
 *.swo
 *~
@@ -27,9 +26,6 @@ ENV/
 .DS_Store
 .DS_Store?
 ._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
 
 # Python
@@ -52,4 +48,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
+
+# Environment variables
+.env
+.env.local
