@@ -1,0 +1,38 @@
+[
+  {
+    "model": "store.category",
+    "pk": 1,
+    "fields": {
+      "name": "Electronics",
+      "description": "Electronic gadgets and devices",
+      "created_at": "2023-11-15T10:00:00Z",
+      "updated_at": "2023-11-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 2,
+    "fields": {
+      "name": "Clothing",
+      "description": "Fashion and apparel",
+      "created_at": "2023-11-15T10:00:00Z",
+      "updated_at": "2023-11-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 1,
+    "fields": {
+      "name": "Gaming Laptop",
+      "slug": "gaming-laptop",
+      "description": "High-performance laptop",
+      "category": 1,
+      "price": "1299.99",
+      "stock": 15,
+      "available": true,
+      "image_url": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400",
+      "created_at": "2023-11-15T10:00:00Z",
+      "updated_at": "2023-11-15T10:00:00Z"
+    }
+  }
+]
