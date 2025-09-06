@@ -112,7 +112,7 @@ CART_SESSION_ID = 'cart'
 # Session settings
 SESSION_COOKIE_AGE = 86400 * 7  # 7 days
 SESSION_SAVE_EVERY_REQUEST = True
-SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+# SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
 # Authentication
 LOGIN_URL = '/accounts/login/'
