@@ -57,7 +57,7 @@ class Command(BaseCommand):
             category=electronics,
             price="149.99",
             stock=25,
-            image_url="https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=400"
+            image_url="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         )
 
         Product.objects.create(
@@ -67,7 +67,7 @@ class Command(BaseCommand):
             category=electronics,
             price="49.99",
             stock=40,
-            image_url="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400"
+            image_url="https://images.unsplash.com/photo-1594843665794-446ce915d840?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         )
 
         Product.objects.create(
@@ -77,7 +77,7 @@ class Command(BaseCommand):
             category=electronics,
             price="89.99",
             stock=35,
-            image_url="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=400"
+            image_url="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         )
 
         Product.objects.create(
@@ -87,7 +87,7 @@ class Command(BaseCommand):
             category=clothing,
             price="59.99",
             stock=20,
-            image_url="https://images.unsplash.com/photo-1583001593651-6e9a4f7f39e0?w=400"
+            image_url="https://plus.unsplash.com/premium_photo-1674828601362-afb73c907ebe?q=80&w=453&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         )
 
         Product.objects.create(
@@ -97,17 +97,17 @@ class Command(BaseCommand):
             category=clothing,
             price="19.99",
             stock=100,
-            image_url="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400"
+            image_url="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         )
 
         Product.objects.create(
-            name="Kurta",
-            slug="kurta",
-            description="Traditional ethnic kurta",
+            name="Bag",
+            slug="bag",
+            description="Premium Quality Bag",
             category=clothing,
             price="39.99",
             stock=15,
-            image_url="https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=400"
+            image_url="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=438&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         )
 
         Product.objects.create(
@@ -117,7 +117,7 @@ class Command(BaseCommand):
             category=clothing,
             price="129.99",
             stock=12,
-            image_url="https://images.unsplash.com/photo-1520975922071-a45c3d74a9b9?w=400"
+            image_url="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         )
 
         self.stdout.write(self.style.SUCCESS("✅ Demo data refreshed successfully!"))
